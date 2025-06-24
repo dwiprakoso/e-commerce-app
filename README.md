@@ -1,4 +1,4 @@
-# Laravel Project
+# E-Commerce Project
 
 Ini adalah proyek Laravel yang berfungsi sebagai sistem informasi berbasis web.
 
