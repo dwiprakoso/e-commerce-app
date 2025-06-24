@@ -25,59 +25,31 @@
     </div>
     <!-- Nav Item - Kategori -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
-            aria-expanded="true" aria-controls="collapseCategory">
+        <a class="nav-link collapsed" href="{{ route('admin.categories.index') }}" aria-expanded="true">
             <i class="fas fa-fw fa-cog"></i>
             <span>Kategori</span>
         </a>
-        <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
     </li>
     <!-- Nav Item - Produk -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduct"
-            aria-expanded="true" aria-controls="collapseProduct">
+        <a class="nav-link collapsed" href="{{ route('admin.products.index') }}" aria-expanded="true">
             <i class="fas fa-fw fa-cog"></i>
             <span>Produk</span>
         </a>
-        <div id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
     </li>
     <!-- Nav Item - Konsumen -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseConsumers"
-            aria-expanded="true" aria-controls="collapseConsumers">
+        <a class="nav-link collapsed" href="{{ route('admin.consumers.index') }}" aria-expanded="true">
             <i class="fas fa-fw fa-cog"></i>
             <span>Konsumen</span>
         </a>
-        <div id="collapseConsumers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
     </li>
     <!-- Nav Item - Order -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrder"
-            aria-expanded="true" aria-controls="collapseOrder">
+        <a class="nav-link collapsed" href="{{ route('admin.orders.index') }}" aria-expanded="true">
             <i class="fas fa-fw fa-cog"></i>
             <span>Order</span>
         </a>
-        <div id="collapseOrder" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
     </li>
 
 
