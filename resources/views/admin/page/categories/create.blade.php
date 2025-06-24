@@ -62,6 +62,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Tambah</a>
+                    <a href="{{ route('admin.categories.index') }}" class="btn btn-success">Kembali</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -75,14 +76,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $category->name }}</td>
-                                        <td>{{ $category->description }}</td>
-                                        <td>{{ $category->created_at->diffForHumans() }}</td>
-                                    </tr>
-                                @endforeach
                             </tbody>
                         </table>
                     </div>
