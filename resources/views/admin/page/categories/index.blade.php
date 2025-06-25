@@ -79,6 +79,7 @@
                                     <th>Nama Produk</th>
                                     <th>Deskripsi</th>
                                     <th>Dibuat pada</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -88,6 +89,17 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->description }}</td>
                                         <td>{{ $category->created_at->diffForHumans() }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.categories.edit', $category->id) }}"
+                                                class="btn btn-sm btn-warning">Edit</a>
+                                            <form action="{{ route('admin.categories.delete', $category->id) }}"
+                                                method="POST" class="d-inline"
+                                                onsubmit="return confirm('Yakin mau hapus kategori ini?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

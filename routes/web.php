@@ -20,6 +20,9 @@ Route::prefix('categories')->group(function () {
     Route::get('/', [CategoriesController::class, 'index'])->name('admin.categories.index');
     Route::get('/create-form', [CategoriesController::class, 'createForm'])->name('admin.categories.create');
     Route::post('/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
+    Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit'])->name('admin.categories.edit');
+    Route::put('/categories/{id}', [CategoriesController::class, 'update'])->name('admin.categories.update');
+    Route::delete('/categories/{id}', [CategoriesController::class, 'destroy'])->name('admin.categories.delete');
 });
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductsController::class, 'index'])->name('admin.products.index');

@@ -52,19 +52,18 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Tambah Kategori</h1>
+            <h1 class="h3 mb-4 text-gray-800">Edit Kategori</h1>
 
-            <!-- Form Card -->
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <form action="{{ route('admin.categories.store') }}" method="POST">
+                    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
 
                         <div class="form-group">
                             <label for="name">Nama Kategori</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                id="name" value="{{ old('name') }}" required>
+                                id="name" value="{{ old('name', $category->name) }}" required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -72,14 +71,14 @@
 
                         <div class="form-group">
                             <label for="description">Deskripsi</label>
-                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description">{{ old('description') }}</textarea>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description">{{ old('description', $category->description) }}</textarea>
                             @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Kembali</a>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
