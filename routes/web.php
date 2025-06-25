@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::prefix('categories')->group(function () {
     Route::get('/', [CategoriesController::class, 'index'])->name('admin.categories.index');
-    Route::get('/create-form', [CategoriesController::class, 'createForm'])->name('admin.categories.create');
+    Route::get('/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
     Route::post('/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
     Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit'])->name('admin.categories.edit');
     Route::put('/categories/{id}', [CategoriesController::class, 'update'])->name('admin.categories.update');
@@ -26,6 +26,8 @@ Route::prefix('categories')->group(function () {
 });
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductsController::class, 'index'])->name('admin.products.index');
+    Route::get('/create', [ProductsController::class, 'create'])->name('admin.products.create');
+    Route::post('/store', [ProductsController::class, 'store'])->name('admin.products.store');
 });
 Route::prefix('consumers')->group(function () {
     Route::get('/', [ConsumersController::class, 'index'])->name('admin.consumers.index');

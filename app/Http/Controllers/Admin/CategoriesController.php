@@ -13,7 +13,7 @@ class CategoriesController extends Controller
         $categories = Categories::all();
         return view('admin.page.categories.index', compact('categories'));
     }
-    public function createForm()
+    public function create()
     {
         return view('admin.page.categories.create');
     }
