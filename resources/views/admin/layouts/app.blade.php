@@ -31,6 +31,7 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+            @include('admin.components.topbar')
 
             @yield('content')
 
