@@ -51,7 +51,14 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <!-- Page Heading -->
             <h1 class="h3 mb-2 text-gray-800">Kategori</h1>
             <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.

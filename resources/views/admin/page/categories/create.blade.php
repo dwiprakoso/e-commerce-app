@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- Main Content -->
     <div id="content">
 
@@ -17,8 +25,8 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                         <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
                     </a>
@@ -53,32 +61,34 @@
         <div class="container-fluid">
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Kategori</h1>
-            <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                For more information about DataTables, please visit the <a target="_blank"
-                    href="https://datatables.net">official DataTables documentation</a>.</p>
+            <h1 class="h3 mb-4 text-gray-800">Tambah Kategori</h1>
 
-            <!-- DataTales Example -->
+            <!-- Form Card -->
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Tambah</a>
-                    <a href="{{ route('admin.categories.index') }}" class="btn btn-success">Kembali</a>
-                </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Produk</th>
-                                    <th>Deskripsi</th>
-                                    <th>Dibuat pada</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+                    <form action="{{ route('admin.categories.store') }}" method="POST">
+                        @csrf
+
+                        <div class="form-group">
+                            <label for="name">Nama Kategori</label>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                id="name" value="{{ old('name') }}" required>
+                            @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Deskripsi</label>
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description">{{ old('description') }}</textarea>
+                            @error('description')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Kembali</a>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
                 </div>
             </div>
 

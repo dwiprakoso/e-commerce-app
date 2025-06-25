@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::prefix('categories')->group(function () {
     Route::get('/', [CategoriesController::class, 'index'])->name('admin.categories.index');
     Route::get('/create-form', [CategoriesController::class, 'createForm'])->name('admin.categories.create');
-    Route::post('/create-form', [CategoriesController::class, 'createForm'])->name('admin.categories.create');
+    Route::post('/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
 });
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductsController::class, 'index'])->name('admin.products.index');
